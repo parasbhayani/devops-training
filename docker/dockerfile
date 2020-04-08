@@ -1,0 +1,10 @@
+#Base Image
+FROM Ubuntu 16.04
+MAINTAINER Paras Bhayani <paras.byn>@gmail.com
+
+RUN apt-get update
+
+#Install apache packages
+RUN apt-get install apache2 -y
+
+CMD ["/usr/sbin/apache2ctl","-D","FOREGROUND"]
