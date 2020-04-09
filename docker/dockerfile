@@ -1,10 +1,13 @@
 #Base Image
-FROM Ubuntu 16.04
+FROM ubuntu:16.04
 MAINTAINER Paras Bhayani <paras.byn>@gmail.com
 
 RUN apt-get update
 
 #Install apache packages
 RUN apt-get install apache2 -y
+
+#Change the Masthead of the web page
+COPY home.html /var/www/html/home.html
 
 CMD ["/usr/sbin/apache2ctl","-D","FOREGROUND"]
